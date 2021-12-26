@@ -1,9 +1,8 @@
-const { NODE_ENV, DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
 // Initialize data base.
 const { Sequelize } = require('sequelize');
-
-const sequelize = NODE_ENV === "production"
+const sequelize = process.env.NODE_ENV === "production"
   ? new Sequelize({
       database: DB_NAME,
       dialect: "postgres",
