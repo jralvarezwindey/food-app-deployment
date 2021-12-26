@@ -28,7 +28,7 @@ export default function App() {
         console.error(error);
       }
 
-      dispatch(getRecipes('', { defaultRecipes: true }));
+      dispatch(getRecipes(null, { defaultRecipes: true }));
     })()
   }, [])
 

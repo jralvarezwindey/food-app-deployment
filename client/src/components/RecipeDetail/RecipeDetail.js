@@ -36,7 +36,10 @@ export default function RecipeDetail() {
   return (
     <> { loading ? <Loading/> : <S.Container>
       <S.RecipeDetail>
-        <S.Image src={ details.image } border={details.id < defaultRecipesNumber} alt='recipe'/>
+        { /* Border property is defined in order to avoid showing a border around */
+        /* the recipe's image when the recipe is an user created one (user created images */
+        /* are svg images with no background). */ }
+        <S.Image src={ details.image } border={ !(details.id  >= defaultRecipesNumber) } alt='recipe'/>
 
         <S.Info > 
           <S.Title>{ details.title }</S.Title>

@@ -13,7 +13,7 @@ export default function NavBar() {
 
   return (
     <>{ location.pathname !== '/landing' && <S.NavBar >
-        <S.LogoContainer onClick={ () => {dispatch(getRecipes('', { defaultRecipes: true })); navigate('/')} }> 
+        <S.LogoContainer onClick={ () => {dispatch(getRecipes(null, { defaultRecipes: true })); navigate('/')} }> 
           <S.Image src={ logo }/>
           Food App
         </S.LogoContainer>

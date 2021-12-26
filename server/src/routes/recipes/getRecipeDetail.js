@@ -12,8 +12,6 @@ module.exports = async function getRecipeDetail(req, res, next) {
   try {
     const id = parseInt(req.params.id.replace('EXTERNAL_', ''), 10);
 
-    if (typeof id !== 'number') return res.status(400).send('Please send a valid ID.');
-
     if (req.params.id.includes('EXTERNAL_')) {
       const response = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`);
       const recipe = response.data;

@@ -17,7 +17,7 @@ export function getDiets(diets) {
 export function getRecipes(query, { defaultRecipes }) {
   return async function(dispatch) {
     try {
-      const response = await axios.get(`/recipes${defaultRecipes ? '/default' : `?title=${query}`}`);
+      const response = await axios.get(`/recipes?title=${query}&defaultRecipes=${defaultRecipes}`);
       const recipes = response.data;
       dispatch({
         type: GET_RECIPES,
