@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
-import createRecipeImage from '../media/create-recipe.jpg'
-import recipeDetailImage from '../media/recipe-detail.jpg'
 import landingImage from '../media/landing.jpg'
+import logoImage from '../media/logo.svg';
+import createRecipeImage from '../media/create-recipe.jpg';
+import recipeDetailImage from '../media/recipe-detail.jpg';
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -20,7 +21,7 @@ body {
 
   &:after{
     position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // Hide images.
-    content: ${`url(${landingImage}) url(${createRecipeImage}) url(${recipeDetailImage})`}; // Load images.
+    content: url(${landingImage}) url(${logoImage})url(${createRecipeImage}) url(${recipeDetailImage}); // Load images.
   }
 }
 

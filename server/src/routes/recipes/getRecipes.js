@@ -16,6 +16,7 @@ module.exports = async function getRecipes(req, res, next) {
   try {
     if (defaultRecipes === 'true') {
       const dbResponse = await Recipe.findAll({
+        order: [['id', 'ASC']],
         limit: 100,
         attributes: ['id', 'title', 'image', 'score'],
         include: { 
