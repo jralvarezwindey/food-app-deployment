@@ -8,7 +8,7 @@ export const Recipe = styled.div`
 	height: 540px;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: space-between;
 	background-color: ${colors.WHITE};
 `
 
