@@ -16,7 +16,7 @@ export const Top = styled.div`
 
 export const Bottom = styled.div`
   flex: 0 0 auto;
-  margin: 7px 7px 7px 370px;
+  margin: 7px 7px 7px 277px;
   padding: 7px;
   display: flex;
   justify-content: center;

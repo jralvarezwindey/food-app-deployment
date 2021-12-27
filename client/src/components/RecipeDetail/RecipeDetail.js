@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -7,7 +8,6 @@ import * as S from './RecipeDetail.styled.js';
 export default function RecipeDetail() {
   const defaultRecipesNumber = 100;
   const { id } = useParams();
-  const [didMount, setDidMount] = useState(false)
   const [loading, setLoading] = useState(true);
   const [details, setDetails] = useState({
     title: '',
@@ -20,7 +20,6 @@ export default function RecipeDetail() {
   });
 
   useEffect(() => {
-    setDidMount(true);
 
     (async function() {
       try {
@@ -34,11 +33,9 @@ export default function RecipeDetail() {
         console.log(error);
       }
     })();
-    
-    return () => setDidMount(false);
-  }, [details, id])
+  }, [])
 
-  if (!didMount) { return null } else return (
+  return (
     <> { loading ? <Loading/> : <S.Container>
       <S.RecipeDetail>
         { /* Border property is defined in order to avoid showing a border around */

@@ -67,17 +67,18 @@ export const DropdownContent = styled.div`
   box-shadow: 0px 8px 16px 0px rgba(55,55,55,0.8);
   color: ${colors.WHITE};
   transition: visibility 200ms, opacity 200ms linear;
+`
 
-  p {
+export const DropdownContentSortCriteria = styled.p`
     padding: 12px 16px;
+    color: ${props => props.active ? colors.RED : colors.WHITE};
     font-size: 22px;
     font-weight: 600;
 
     &:hover {
       background-color: ${colors.WHITE};
-      color: ${colors.BLACK};
+      color: ${props => props.active ? colors.RED: colors.BLACK};
     }
-  }
 `
 
 export const OrderBy = styled.div`

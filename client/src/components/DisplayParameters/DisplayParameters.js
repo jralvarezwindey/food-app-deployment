@@ -5,8 +5,10 @@ import * as S from './DisplayParameters.styled.js';
 
 
 export default function DisplayParameters() {
+
   const [selectedFilters, setSelectedFilters] = useState([])
   const { diets } = useSelector(state => state)
+  const { sortCriteria } = useSelector(state => state.recipesDisplayParameters);
   const dispatch = useDispatch();
 
   function handleFilter(filter) {
@@ -28,9 +30,9 @@ export default function DisplayParameters() {
       <S.OrderBy>
         <S.DropdownButton>Order by</S.DropdownButton>
         <S.DropdownContent>
-          <p onClick={() => handleOrder('az') }>(a-z)</p>
-          <p onClick={() => handleOrder('za') }>(z-a)</p>
-          <p onClick={() => handleOrder('score') }>score</p>
+          <S.DropdownContentSortCriteria active={ sortCriteria === 'az'} onClick={() => handleOrder('az') }>(a-z)</S.DropdownContentSortCriteria>
+          <S.DropdownContentSortCriteria active={ sortCriteria === 'za'} onClick={() => handleOrder('za') }>(z-a)</S.DropdownContentSortCriteria>
+          <S.DropdownContentSortCriteria active={ sortCriteria === 'score'} onClick={() => handleOrder('score') }>score</S.DropdownContentSortCriteria>
         </S.DropdownContent>
       </S.OrderBy>
 

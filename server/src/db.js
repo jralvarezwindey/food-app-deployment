@@ -24,6 +24,7 @@ const sequelize = process.env.NODE_ENV === 'production'
         keepAlive: true,
       },
       ssl: true,
+      define: { timestamps: false }
     })
   : new Sequelize( `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, { 
       logging: false,

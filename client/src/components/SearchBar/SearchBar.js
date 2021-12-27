@@ -15,6 +15,7 @@ export default function SearchBar() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (query === '') return;
     dispatch(setStatus('loading'));
     dispatch(getRecipes(query, { defaultRecipes: false }));
     setQuery('')

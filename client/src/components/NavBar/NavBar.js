@@ -4,16 +4,22 @@ import { useDispatch } from 'react-redux';
 import SearchBar from '../SearchBar/SearchBar.js';
 import * as S from './NavBar.styled.js';
 import logo from '../../media/logo.svg';
-import { getRecipes } from '../../redux/actions.js';
+import { getRecipes, setStatus } from '../../redux/actions.js';
 
 export default function NavBar() {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  function handleLogoClick() {
+    dispatch(getRecipes(null, { defaultRecipes: true }));
+    dispatch(setStatus('loading'));
+    navigate('/');
+  }
+
   return (
     <>{ location.pathname !== '/landing' && <S.NavBar >
-        <S.LogoContainer onClick={ () => {dispatch(getRecipes(null, { defaultRecipes: true })); navigate('/')} }> 
+        <S.LogoContainer onClick={ handleLogoClick }> 
           <S.Image src={ logo }/>
           Food App
         </S.LogoContainer>

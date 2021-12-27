@@ -12,6 +12,7 @@ const initialState = {
     status: 'initial',
     page: 0,
     filters: [],
+    sortCriteria: 'none'
   },
 };
 
@@ -53,15 +54,17 @@ export default function reducer(state = initialState, { type, payload }) {
       }
 
     case SORT_RECIPES:
+      const removeSortCriteria = payload === state.recipesDisplayParameters.sortCriteria;
       return {
         ...state,
         recipes: {
           ...state.recipes,
-          displayed: sortRecipes([...state.recipes.displayed], payload),
+          displayed: removeSortCriteria ? state.recipes.fetched : sortRecipes([...state.recipes.displayed], payload),
         },
         recipesDisplayParameters: {
           ...state.recipesDisplayParameters,
           page: 0,
+          sortCriteria: removeSortCriteria ? 'none' : payload
         }
       }
 
