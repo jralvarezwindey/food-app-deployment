@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -16,10 +17,8 @@ export default function App() {
 
   useEffect(() => {
     navigate('/landing');
-
     (async function() {
       dispatch(setStatus('loading'));
-
       try {
         const response = await axios.get(`/diets`);
         const diets = response.data;

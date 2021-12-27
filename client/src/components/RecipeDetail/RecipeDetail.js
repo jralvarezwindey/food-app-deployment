@@ -35,13 +35,10 @@ export default function RecipeDetail() {
       }
     })();
     
-    return () => {
-      setDidMount(false);
-    }
+    return () => setDidMount(false);
   }, [details, id])
 
-  if (!didMount) return null 
-  else return (
+  if (!didMount) { return null } else return (
     <> { loading ? <Loading/> : <S.Container>
       <S.RecipeDetail>
         { /* Border property is defined in order to avoid showing a border around */
