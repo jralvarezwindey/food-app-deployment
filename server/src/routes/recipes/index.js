@@ -7,7 +7,7 @@ const postRecipe = require('./postRecipe.js');
 // ----
 const router = express.Router();
 
-router.get('/', process.env.NODE_ENV === 'production' ? getRecipesProduction : getRecipesDevelopment);
+router.get('/', getRecipesProduction);
 router.get('/detail/:id', getRecipeDetail);
 router.post('/create', postRecipe);
 
