@@ -29,13 +29,13 @@ export const FiltersTitle = styled.div`
 `
 
 export const Filter = styled.span`
-  cursor: pointer;
   margin: 9px;
   padding: 6px 16px;
   height: 36px;
   border-radius: 80px;
-  text-align: center;
+  cursor: pointer;
   background-color: ${props => props.active ? colors.RED : colors.BLACK};
+  text-align: center;
   transition: 100ms;
 
   &:hover {
@@ -49,6 +49,7 @@ export const DropdownButton = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 8px 0px rgba(55,55,55,0.8);
+  cursor: pointer;
   background-color: ${colors.BLACK};
   color: ${colors.WHITE};
   font-size: 28px;
@@ -71,6 +72,7 @@ export const DropdownContent = styled.div`
 
 export const DropdownContentSortCriteria = styled.p`
     padding: 12px 16px;
+    cursor: default;
     color: ${props => props.active ? colors.RED : colors.WHITE};
     font-size: 22px;
     font-weight: 600;

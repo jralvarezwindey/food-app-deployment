@@ -28,7 +28,7 @@ module.exports = function(sequelize) {
   }, {
     hooks: {
       beforeCreate: function(recipe, options) {
-        if (storedRecipes >= 101) {
+        if (storedRecipes >= 145) {
           sequelize.models.Recipe.destroy({
             where: {
               id: {

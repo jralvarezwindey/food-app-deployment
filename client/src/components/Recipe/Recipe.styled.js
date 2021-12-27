@@ -5,9 +5,10 @@ export const Recipe = styled.div`
 	position: relative;
 	margin: 15px;
 	width: 435px;
+	height: 540px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: flex-start;
 	background-color: ${colors.WHITE};
 `
 
@@ -17,7 +18,6 @@ export const Image = styled.img`
 `
 
 export const Info = styled.div`
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
