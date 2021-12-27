@@ -236,7 +236,7 @@ export const AddInstructionButton = styled.button`
 export const Instructions = styled.div`
   visibility: ${props => props.inactive ? 'hidden' : 'visible'};
   padding: 0px 15px;
-  height: 240px;
+  height: 160px;
   grid-column: 2 /3;
   box-shadow: inset 0px 0px 100px 100px rgba(0,0,0,0.7);
   color: ${colors.WHITE};
