@@ -43,6 +43,5 @@ export default function App() {
         <Route path='/recipe/create' element={ <CreateRecipeSmart/> }/>
       </Routes>   
     </>
-    
   );
 };

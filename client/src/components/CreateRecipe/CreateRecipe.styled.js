@@ -127,9 +127,9 @@ export const ErrorSymbol = styled.p`
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  background-color: black;
-  color: red;
-  font-size: 16px;
+  background-color: red;
+  color: white;
+  font-size: 24px;
   font-weight: 600;
 `
 

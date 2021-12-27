@@ -7,6 +7,7 @@ import * as S from './RecipeDetail.styled.js';
 export default function RecipeDetail() {
   const defaultRecipesNumber = 100;
   const { id } = useParams();
+  const [didMount, setDidMount] = useState(false)
   const [loading, setLoading] = useState(true);
   const [details, setDetails] = useState({
     title: '',
@@ -19,6 +20,8 @@ export default function RecipeDetail() {
   });
 
   useEffect(() => {
+    setDidMount(true);
+
     (async function() {
       try {
         const response = await axios.get(`/recipes/detail/${id}`); 
@@ -31,9 +34,14 @@ export default function RecipeDetail() {
         console.log(error);
       }
     })();
-  }, [])
+    
+    return () => {
+      setDidMount(false);
+    }
+  }, [details, id])
 
-  return (
+  if (!didMount) return null 
+  else return (
     <> { loading ? <Loading/> : <S.Container>
       <S.RecipeDetail>
         { /* Border property is defined in order to avoid showing a border around */
