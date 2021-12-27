@@ -8,7 +8,6 @@ import store from './redux/store.js';
 import App from './App';
  
 dotenv.config();
-process.env.CI = false;
 axios.defaults.baseURL = process.env.REACT_APP_SERVER || 'http://localhost:3001';
 
 render(
