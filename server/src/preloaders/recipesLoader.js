@@ -10,7 +10,7 @@ module.exports = function recipesLoader() {
         const newRecipePromise = db.models.Recipe.create({
           title,
           image,
-          summary,
+          summary: summary.replace(/<[^>]*>?/g, ''),
           score: Number(score),
           healthScore: Number(healthScore),
           instructions,
