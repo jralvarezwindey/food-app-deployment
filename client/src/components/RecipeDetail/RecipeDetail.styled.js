@@ -22,8 +22,8 @@ export const RecipeDetail = styled.div`
 `
 
 export const Image = styled.img`
-	margin: 12px 32px 12px 12px;
-	height: 600px;
+	margin: 12px 40px 12px 12px;
+	height: 560px;
 	border: ${props => props.border ? '1px solid black' : 'none'};
 	background-size: cover;
 `
@@ -35,7 +35,7 @@ export const Info = styled.div`
 `
 
 export const Title = styled.h1`
-	margin: 32px 46px 3px;
+	margin: 32px 46px 24px;
 	text-align: left;
 	font-size: 32px;
 	font-weight: normal;
@@ -45,6 +45,7 @@ export const Title = styled.h1`
 
 export const Scores = styled.div`
 	display: flex;
+	margin-bottom: 22px;
 `
 
 export const Score = styled.p`
@@ -71,7 +72,7 @@ export const HealthScore = styled.i`
 `
 
 export const Diets = styled.ul`
-	margin: 10px 15px;
+	margin: 0px 15px 32px;
 	display: flex;
 	flex-wrap: wrap;
 `
@@ -79,7 +80,7 @@ export const Diets = styled.ul`
 export const Diet = styled.li`
 	flex-shrink: 0;
 	margin: 5px 5px;
-	padding: 4px 12px;
+	padding: 1px 12px;
 	border-radius: 20px;
 	background-color: ${colors.BLACK};
 	color: ${colors.WHITE};
@@ -92,7 +93,7 @@ export const SubTitle = styled.h1`
 `
 
 export const Text = styled.div`
-	margin: 15px;
+	margin: 15px 40px 15px 15px;
 	padding: 10px 10px 10px 34px;
 	max-height: 250px;
 	background-color: #EAE5D6;

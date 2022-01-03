@@ -31,14 +31,9 @@ export const Title = styled.h1`
 	font-weight: normal;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
+	text-overflow: ellipsis;
 	white-space: nowrap;
-  overflow-x: scroll;
-
-	::-webkit-scrollbar {
-		display: none;  /* Hide scrollbar in Chrome, Safari and Opera. */
-		scrollbar-width: none;  /* Hide in Firefox. */
-		-ms-overflow-style: none;  /* Hide in IE and Edge. */
-	}
+	overflow: hidden;
 `
 
 export const Score = styled.div`
